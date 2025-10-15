@@ -1,0 +1,33 @@
+// Superclass
+class Food {
+    void prepare() {
+        System.out.println("Food is being prepared with fresh ingredients.");
+    }
+
+    void serve() {
+        System.out.println("Food is served hot and delicious.");
+    }
+}
+
+// Subclass extending the superclass
+class Dish extends Food {
+    void displayDish() {
+        System.out.println("The special dish is Paneer Butter Masala.");
+    }
+
+    void showProcess() {
+        // Calling superclass methods using 'super'
+        super.prepare();
+        super.serve();
+        displayDish();
+    }
+}
+
+// Main class
+public class SingleInheritanceDishes {
+    public static void main(String[] args) {
+        Dish dish = new Dish(); // Create object of subclass
+        System.out.println("=== Single Inheritance Example: Dishes ===");
+        dish.showProcess(); // Calls method that uses superclass methods
+    }
+}
