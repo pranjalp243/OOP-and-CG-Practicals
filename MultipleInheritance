@@ -1,0 +1,46 @@
+
+// First interface
+interface SweetDish {
+    void showSweet();
+}
+
+// Second interface
+interface FestiveDish {
+    void showFestiveDish();
+}
+
+// Class implementing multiple interfaces
+class MaharashtrianMenu implements SweetDish, FestiveDish {
+    // Implement methods from both interfaces
+    public void showSweet() {
+        System.out.println("Sweet Dish: Modak — Lord Ganesha's favorite delicacy!");
+    }
+
+    public void showFestiveDish() {
+        System.out.println("Festive Dish: Puran Poli — a traditional Maharashtrian treat!");
+    }
+
+    // Additional method
+    public void showMenu() {
+        System.out.println("=== Welcome to the Maharashtrian Menu ===");
+    }
+}
+
+// Main class
+public class MultipleInheritanceModakPuranPoli {
+    public static void main(String[] args) {
+        // Polymorphism: interface references point to subclass object
+        SweetDish sweet = new MaharashtrianMenu();
+        FestiveDish festive = new MaharashtrianMenu();
+
+        System.out.println("=== Multiple Inheritance using Interfaces ===");
+
+        // Access class-specific method
+        MaharashtrianMenu menu = new MaharashtrianMenu();
+        menu.showMenu();
+
+        // Using interface references
+        sweet.showSweet();
+        festive.showFestiveDish();
+    }
+}
